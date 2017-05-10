@@ -115,6 +115,27 @@ function createPerson(name,age,job) {
 }
 var person5 = createPerson("Nicholas",29,"Software Engineer");
 var perosn6 = createPerson("Greg",27,"Doctor");
+console.log(person5.constructor);// 它的构造函数式 是function Object ..{}
+
+/***** 6.2.2 构造函数模式 *****/
+/*
+没有显示地创建对象；
+直接将属性和方法赋给了this对象；
+没有return语句。
+*/
+//构造函数的过程：1）创建一个新对象 2)将构造函数的作用于赋给新对象 3）执行构造行数中的代码，为其添加新属性 4）返回新对象
+function Person(name,age,job) {
+	this.name = name;
+	this.age = age;
+	this.job = job;
+	this.sayName = function () {
+		console.log(this.name);
+	}
+}
+var person7 = new Person("Kobe",38,"SG");
+var perosn8 = new Person("T-Mac",37,"PG");
+console.log(person7.constructor,person7 instanceof Object,person7 instanceof Person);
+
 
 
 
