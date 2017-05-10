@@ -24,7 +24,6 @@ var person2 = {
 
 /***** 6.1.1 属性类型 *****/
 //ECMAScript中有两种属性：数据属性和访问器属性
-
 //1.数据属性：数据属性包含一个数据值的位置。在这个位置可以读取和写入值。
 //数据属性有4个描述其行为的特性：[[Configurable]],[[Enumerable]],[[Writable]],[[Value]]
 //要修改属性默认的特性，必须使用Object.defineProperty()方法
@@ -43,7 +42,6 @@ Object.defineProperty(person4, "name", {
 	value: "Nicholas"
 });
 //可以多次调用Object.defineProperty()方法修改同一个属性，但在把configurable特性设置为false之后就会有限制。
-
 //2.访问器属性:访问器属性不包含数据值，他们包含一对儿getter和setter函数（不过这两个属性都不是必须的）
 //访问器属性有4个描述其行为的特性：[[Configurable]],[[Enumerable]],[[Get]],[[Set]]
 var book = {
@@ -67,8 +65,38 @@ book.year = 2003;
 console.log(book.edition,book.year);
 
 /***** 6.1.2 定义多个属性 *****/
+var book2 = {};
+Object.defineProperties(book2,{
+	_year:{
+		writable: true,
+		value: 2004
+	},
+	edition: {
+		writable: true,
+		value: 1
+	},
+	year: {
+		get: function () {
+			return this._year;
+		},
+		set: function (newValue) {
+			if (newValue > 2004) {
+				this._year = newValue;
+				this.edition += newValue - 2004;
+			}
+		}
+	}
+})
 
-
+/*读取属性的特性*/
+var descriptor = Object.getOwnPropertyDescriptor(book2, "_year");
+console.log(descriptor.value);
+console.log(descriptor.configurable);
+console.log(descriptor.get);
+var descriptor2 = Object.getOwnPropertyDescriptor(book2, "year");
+console.log(descriptor2.value);
+console.log(descriptor2.configurable);
+console.log(descriptor2.get);
 
 
 
