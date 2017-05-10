@@ -98,7 +98,23 @@ console.log(descriptor2.value);
 console.log(descriptor2.configurable);
 console.log(descriptor2.get);
 
-
+/*
+	6.2 创建对象
+*/
+/***** 6.2.1 工厂对象 *****/
+//工厂对象虽然解决了创建多个相似对象的问题，但是没有解决对象识别的问题（即怎么知道一个对象的类型！）
+function createPerson(name,age,job) {
+	var o = new Object();
+	o.name = name;
+	o.age = age;
+	o.job = job;
+	o.sayName = function () {
+		console.log(this.name);
+	}
+	return o;
+}
+var person5 = createPerson("Nicholas",29,"Software Engineer");
+var perosn6 = createPerson("Greg",27,"Doctor");
 
 
 
