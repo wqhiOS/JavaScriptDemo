@@ -96,7 +96,7 @@ var jsonText4 = JSON.stringify(book3);
 
 var bookCopy1 = JSON.parse(jsonText4,function(key,value) {
 	if (key == "releaseDate") {
-		return new Date(value);//将日期字符串转换为Date对象,因为只有对象才能调用Date的方法。
+		return new Date(value);//将日期字符串转换为Date对象,因为只有对象才能调用Date的方法。 ·
 	}else {
 		return value;
 	}

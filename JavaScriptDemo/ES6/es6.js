@@ -25,3 +25,19 @@ let str = `asdfsd${hello}fsdf${world}dsfdsfdsfdf`;
 console.log(str);
 
 // 4.解构赋值
+// 4.1 结构赋值给默认值：使用=
+
+// 5.复制数组
+/*
+	//不能直接=，呢样复制的是指针
+	a)循环
+	b)Array.from(arr)
+	c)var arr2 = [...arr];
+
+	// ... 其他用法：
+	function show(...args) {
+		//args 是数组，函数中的arguments不是数组，不能是用push等数组对象的方法
+		args.push(5);
+		console.log(args);
+	}
+*/
