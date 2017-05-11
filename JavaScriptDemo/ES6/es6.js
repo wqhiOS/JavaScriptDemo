@@ -88,7 +88,56 @@ for (value of books.keys()) { //arr 用forof 的话只有values
 => 函数格式越来越简单
 */
 
+// 8.单体对象
+/*
+语法更加简洁
+*/
+var name = 'wuqihan';
+var age = 24;
+var person = {
+	name,
+	age,
+	showName(){
+		console.log(this.name);
+	}
+};
+person.showName();
 
+// 9.面向对象
+/*
+ES6之前。没有类的概念，下面这个函数 既是类，有时构造函数。。
+*/
+function Student(name,age) {
+	this.name = name;
+	this.age = age;
+}
+Student.prototype.showName = function() {
+	console.log(this.name);
+};
+var me = new Student("wuqihan",24);
+me.showName();
+/*
+ES6的写法
+有了真正的:class
+真正的构造函数：
+*/
+class Person {
+	constructor(name,age) {//我在这里设置默认值，为什么老报错啊？不太明白。。很奇怪，放到html里面就不报错。
+		this.name = name;
+		this.age = age;
+	}
+	showAge() {
+		console.log(this.age);
+	}
+}
+var p1 = new Person("kobe",38);
+console.log(p1.name);
+p1.showAge();
+
+// function f(x=1,y=2) { 还是报错啊，还是放到html里面就不报错。
+// 	console.log(x,y);
+// }
+// f();
 
 
 
