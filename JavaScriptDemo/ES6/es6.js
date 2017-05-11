@@ -23,3 +23,5 @@ let hello = '你好';
 let world = '世界'
 let str = `asdfsd${hello}fsdf${world}dsfdsfdsfdf`;
 console.log(str);
+
+// 4.解构赋值
