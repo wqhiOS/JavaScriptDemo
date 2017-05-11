@@ -1,0 +1,44 @@
+<!-- ES6箭头函数 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ES6箭头函数</title>
+    <style media="screen">
+      #box{
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+      }
+    </style>
+
+    <script type="text/javascript">
+    // 旧的ES5可以使用this. 没有问题
+      window.onload = function() {
+        var box = window.document.getElementById('box');
+        box.onclick = function() {
+          if (this.style.background == 'red') {
+            this.style.background = 'gray';
+          }else {
+            this.style.background = 'red';
+          }
+        }
+      }
+    </script>
+
+    <script>
+      window.onload = ()=>{
+        let box = window.document.getElementById('box');
+        box.onclick = ()=>{
+          //ES6 this这里指的是window了
+          // this.style.background = 'red';
+          //并且在ES6箭头函数中，arguments 不能使用
+          box.style.background = 'red';
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <div id="box"></div>
+  </body>
+</html>

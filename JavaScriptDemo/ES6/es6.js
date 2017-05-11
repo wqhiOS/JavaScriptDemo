@@ -79,11 +79,14 @@ for (let key of map.keys()){//同时也有values()
 }
 
 var books = ["红楼梦","三国演义","水浒传","西游记"];
-for (value of books.values()) {
+for (value of books.keys()) { //arr 用forof 的话只有values
 	console.log('books:'+value);
 }
 
-
+// 7.函数
+/*
+=> 函数格式越来越简单
+*/
 
 
 
