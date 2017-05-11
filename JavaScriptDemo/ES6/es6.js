@@ -139,6 +139,23 @@ p2.showAge();
 
 
 // 10.继承
+/*
+ES6之前的继承方式： 暂时还不太懂
+*/
+function Worker(name,age) {
+	Student.apply(this,arguments);
+}
+Worker.prototype = new Student();
+var w1 = new Worker("tom",2);
+w1.showName();
+/*
+ES6的继承方式:更简单了
+*/
+class Doctor extends Student {
+
+}
+var d = new Doctor('sam',33);
+d.showName();
 
 
 
