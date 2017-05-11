@@ -17,4 +17,9 @@ console.log('b='+b);//因为b的作用域是函数 而不是代码块，所以�
 /* 用来定义常量，一旦赋值，以后不可改变
 	声明的时候，必须同时赋值，不能先声明，后赋值。
 */
-
+	
+// 3.字符串连接
+let hello = '你好';
+let world = '世界'
+let str = `asdfsd${hello}fsdf${world}dsfdsfdsfdf`;
+console.log(str);
