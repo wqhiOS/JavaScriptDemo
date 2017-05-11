@@ -30,13 +30,14 @@
       window.onload = ()=>{
         let box = window.document.getElementById('box');
         box.onclick = ()=>{
-          //ES6 this这里指的是window了
+          //ES6 this这里指的是window了,不明白为什么
           // this.style.background = 'red';
           //并且在ES6箭头函数中，arguments 不能使用
           box.style.background = 'red';
         };
       }
     </script>
+
   </head>
   <body>
     <div id="box"></div>
