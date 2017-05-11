@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let</title>
+
+	<!-- 使用var会出现的问题 -->
+	<script>
+		window.onload = function () {
+			var buttons = window.document.getElementsByTagName('input');
+		
+			for (var i = 0; i < buttons.length; i++) {
+				console.log(i);
+				buttons[i].onclick = function() {
+					console.log(i);//始终都是3、有问题,因为在onclick这个函数里面没有变量i，所以要向上查找，找的i就是3了
+				};
+			}
+		}
+	</script>
+
+	<!--如何解决上面的问题。 使用封闭空间 -->
+	<script>
+		window.onload = function () {
+			var buttons = window.document.getElementsByTagName('input');
+			for (var i = 0; i < buttons.length; i++) {
+				(function (i) {
+					buttons[i].onclick = function () {
+						console.log(i);
+					}
+				})(i);
+			}
+		}
+	</script>
+	
+	<!-- 使用let解决上面的问题 -->
+	<script>
+		window.onload = function () {
+			var buttons = window.document.getElementsByTagName('input');
+			for (let i = 0; i < buttons.length; i++) {
+				buttons[i].onclick = function () {
+						console.log(i);
+				}
+			} 
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="aaa" />
+	<input type="button" value="bbb" />
+	<input type="button" value="ccc" />
+	
+</body>
+</html>
