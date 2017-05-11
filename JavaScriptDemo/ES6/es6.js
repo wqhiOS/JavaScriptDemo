@@ -157,6 +157,13 @@ class Doctor extends Student {
 var d = new Doctor('sam',33);
 d.showName();
 
+// 11.模块化
+/*
+如何定义导出模块： const a = 12; export default a;
+如何使用(引用)： import modA from './a.js'; console.log(modA);// 12  
+*/
+
+
 
 
 
