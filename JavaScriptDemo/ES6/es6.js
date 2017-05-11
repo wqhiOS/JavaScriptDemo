@@ -122,7 +122,7 @@ ES6的写法
 真正的构造函数：
 */
 class Person {
-	constructor(name,age) {//我在这里设置默认值，为什么老报错啊？不太明白。。很奇怪，放到html里面就不报错。
+	constructor(name='wuqihan',age=24) {
 		this.name = name;
 		this.age = age;
 	}
@@ -134,12 +134,11 @@ var p1 = new Person("kobe",38);
 console.log(p1.name);
 p1.showAge();
 
-// function f(x=1,y=2) { 还是报错啊，还是放到html里面就不报错。
-// 	console.log(x,y);
-// }
-// f();
+var p2 = new Person();
+p2.showAge();
 
 
+// 10.继承
 
 
 
